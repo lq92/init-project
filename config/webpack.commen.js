@@ -3,22 +3,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-	mode: 'production',
 	entry: {
-		index: './src/index.js',
-		print: './src/print.js'
+		index: './src/index.js'
 	},
 	output: {
 		filename: '[name].bundle.js',
-		path: path.resolve(__dirname, 'dist')
-	},
-	devtool: 'inline-source-map',
-	devServer: {
-		contentBase: './dist'
+		path: path.resolve(__dirname, '../dist')
 	},
 	plugins: [
-		new HtmlWebpackPlugin(),
-		new CleanWebpackPlugin([ 'dist' ])
+		new CleanWebpackPlugin([ 'dist' ]),
+		new HtmlWebpackPlugin()
 	],
 	module: {
 		rules: [
@@ -27,11 +21,11 @@ module.exports = {
 				use: [ 'style-loader', 'css-loader' ]
 			},
 			{
-				test: /\.(jpg|png|gif|svg)/,
+				test: /\.(jpg|png|gif|svg)$/,
 				use: [ 'file-loader' ]
 			},
 			{
-				test: /\.(ttf|woff|svg)/,
+				test: /\.(woff|tff|svg)$/,
 				use: [ 'file-loader' ]
 			}
 		]
