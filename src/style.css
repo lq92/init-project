@@ -1,0 +1,9 @@
+.hello {
+	width: 80%;
+	height: 50%;
+	margin: 0 auto;
+	border: 2px solid #f00;
+	font-size: 22px;
+	text-align: center;
+	box-sizing: border-box;
+}
